@@ -1,0 +1,116 @@
+body  {
+    font-size: large;
+    font-family: 'Arial', serif;
+    color: #000000;
+    margin: 5px;
+    padding-top: 100px;
+}
+
+div.top_logo {
+    top: 0;
+    left: 0;
+    padding: 5px 0px 5px 20px;
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    font-family: "Verdana";
+    font-size: 25px;
+    color: darkslategray;
+    letter-spacing: 2px;
+    width: 100%;
+}
+
+div.top_menu {
+    background-color: slategrey;
+    padding: 0px;
+    position:fixed;
+    z-index: 10;
+    top: 40px;
+    left: 0;
+    width: 100%;
+}
+
+a.top_home {
+    padding: 6px 20px 2px 20px;
+    display: block;
+    float: left;
+    background-color:limegreen;
+}
+
+a.top_home:hover {
+    padding: 6px 20px 2px 20px;
+    background-color:darkslategray;
+}
+
+a.top_links {
+    padding: 9px 20px 9px 20px;
+    background-color: slategrey;
+    color: whitesmoke;
+    font-family: "Trebuchet MS";
+    font-size: 23px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    float: left;
+}
+
+a.top_links:hover {
+    background-color:darkslategray;
+    padding: 9px 20px 9px 20px;
+}
+
+#comments {
+    width: 400px;
+    height: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    color: white;
+    background-color: slategray;
+    resize: none;
+}
+
+input, select {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: darkgreen;
+    background-color: lightgray;
+}
+
+table {
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+tr:hover {background-color: lightgray}
+
+button {
+    background-color: slategray;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+th, td {
+    padding: 0px 20px 0px 20px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+footer {
+    background: slategray;
+    color: white;
+    text-align:center;
+    font-size: large;
+    margin-top: 800px;
+}

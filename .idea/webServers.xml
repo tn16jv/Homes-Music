@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="757d0658-e937-4cb3-8d00-db8a292a4306" name="Brock" url="http://sandcastle.cosc.brocku.ca">
+        <fileTransfer host="sandcastle.cosc.brocku.ca" port="22" rootFolder="/home/std/tn16jv/public_html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

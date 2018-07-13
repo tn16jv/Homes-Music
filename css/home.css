@@ -1,0 +1,23 @@
+div.content_text {
+    margin: auto;
+    width: 50%;
+    border: 3px solid darkgreen;
+    padding: 100px 100px 100px 100px;
+}
+
+#login {
+    display: inline-block;  /* Makes sure that it is no larger (width, length) than the contents */
+    margin: 0;
+    padding: 20px 20px 20px 20px;
+}
+
+#submission {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.userLogin {
+    font-size: medium;
+    padding: 0px 0px 0px 0px;
+}

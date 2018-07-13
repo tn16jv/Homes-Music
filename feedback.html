@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link rel="icon" href="images/favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#includedContent").load("header.html");
+        });
+    </script>
+</head>
+<body>
+
+<div id="includedContent"></div>
+
+<aside>
+<form action="feedback_submit.php" method="post">
+    Name:
+    <input name="Name" type="text" size="30">
+    <p>
+        Email address: <input type="Email" name="Email">
+    </p>
+    <p>How would you rate this site from 1-10? <input type="number" min="1" max="10" name="Rating"></p>
+    <p> Ease of navigation on the site:
+        <select name="Navigation">
+            <option></option>
+            <option>Extremely Difficult</option>
+            <option>Difficult</option>
+            <option>Neutral</option>
+            <option>Good</option>
+            <option>Deserves an Award</option>
+        </select>
+    </p>
+    Additional Comments:
+    <p>
+        <textarea id="comments" name="Comments"> </textarea>
+    </p>
+    <p>
+        <input type="submit" value="Submit Your Entries">
+        <input type="reset" value="Clear Your Entries">
+    </p>
+</form>
+</aside>
+<footer>
+    <p>Created by: ThaiBinh Nguyen</p>
+    <p>Brock University</p>
+    <p>2018</p>
+</footer>
+</body>
+</html>

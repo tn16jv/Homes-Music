@@ -1,0 +1,10 @@
+#playerArea {
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    position:fixed; /* Puts the playerArea in one fixed spot */
+    top: 100px;
+}
+
+#player {
+    width: 100%;    /* audio player will take up 100% of the playerArea */
+}
