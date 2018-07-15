@@ -62,14 +62,35 @@
 </div>
 
 <?php
+include "PHP/databaseAccess.php";
+$conn = connectDB();
+
 function protect($string) {
     $string = trim(strip_tags(addslashes($string)));
     return $string;
 }
+
 if (isset($_POST['registerSubmit'])) {
     $username = protect($_POST['regUname']);
     $password = protect($_POST['regPsw']);
     $email = protect($_POST['regEmail']);
 
-    echo $_POST['regUname'] . " " . $_POST['regPsw'] . " " . $_POST['regEmail'];
+    $usernameQuery = "SELECT * FROM users WHERE username='" . $username . "'";
+    $checkUsername = mysqli_query($conn,$usernameQuery);
+    $count = mysqli_num_rows($checkUsername);
+    if ($count == 1) {
+        die("<p>Username taken</p>");
+    }
+
+    $emailQuery = "SELECT * FROM users WHERE email='" . $email . "'";
+    $checkEmail = mysqli_query($conn, $emailQuery);
+    $count = mysqli_num_rows($checkEmail);
+    if ($count == 1) {
+        die ("<p>Email taken</p>");
+    }
+
+    $date = date('U');
+    $insertQuery = "INSERT INTO users (username, password, email)
+                    VALUES('".$username."', '".md5($password)."', '".$email."')";
+    $conn->query($insertQuery);
 }
