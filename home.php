@@ -13,6 +13,7 @@
 
 <?php
 include_once("header.html");
+session_start();
 ob_start(); //Fixes any issues with headers being sent and then stopping the HTTP. Prominent with cookies and sessions.
 ?>
 
@@ -34,12 +35,16 @@ include_once("PHP/loginForm.php");
 <script src="Script/loginForm.js"></script>
 
 <?php
+if (isset($_SESSION['user'])) {
+    echo "Logged in as " . $_SESSION['user'];
+}
+
 $nextMonth = 30 * 60 * 24 * 60 + time();    // Cookie lasts for a month from now
 setcookie('lastVisit', date("g:ia")." on ".date("F d Y"), $nextMonth);
 if(isset($_COOKIE['lastVisit']))    // Checks the cookies list for lastVisit
 {
     $last = $_COOKIE['lastVisit'];
-    echo "<p>The last time you visited was ". $last;
+    echo "<p>The last time your IP visited was ". $last;
 }
 else
     echo "<p>Wow! This is the first time you visited!";

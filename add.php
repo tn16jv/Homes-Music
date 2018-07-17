@@ -11,6 +11,11 @@
 
 <?php
 include_once("header.html");
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    die ("<p>Not logged in</p>");
+}
 ?>
 
 <form action="add_submit.php" method="post" enctype="multipart/form-data">

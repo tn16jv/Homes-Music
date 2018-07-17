@@ -1,9 +1,10 @@
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+<form method="POST"><button type="submit" name="logout" style="width:auto;">Logout</button></form>
 
 <div id="id01" class="modal">
 
-    <form class="modal-content animate" action="/action_page.php">
+    <form class="modal-content animate" method="POST">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <!--<img src="images/favicon.png" alt="Avatar" class="avatar">-->
@@ -11,10 +12,10 @@
 
         <div class="container">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="logUname" required>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" name="logPsw" required>
 
             <button type="submit" name="loginSubmit">Login</button>
             <label>
@@ -68,6 +69,32 @@ $conn = connectDB();
 function protect($string) {
     $string = trim(strip_tags(addslashes($string)));
     return $string;
+}
+
+if (isset($_POST['logout'])) {
+    session_unset();
+    echo "Logged out";
+}
+
+if (isset($_POST['loginSubmit'])) {
+    $username = protect($_POST['logUname']);
+    $password = protect($_POST['logPsw']);
+
+    $usernameQuery = "SELECT * FROM users WHERE username='" . $username . "'";
+    $checkUsername = mysqli_query($conn, $usernameQuery);
+    if (mysqli_num_rows($checkUsername) == 0) {
+        die("<p>Username not found</p>");
+    }
+
+    $passwordQuery = "SELECT * FROM users WHERE username ='" . $username . "' AND password='" . md5($password) . "'";
+    $checkPassword = mysqli_query($conn, $passwordQuery);
+    if (mysqli_num_rows($checkPassword) == 0) {
+        die("<p>Wrong password buddy</p>");
+    }
+
+    $row = mysqli_fetch_assoc($checkPassword);
+    $_SESSION['uid'] = $row['id'];
+    $_SESSION['user'] = $row['username'];
 }
 
 if (isset($_POST['registerSubmit'])) {

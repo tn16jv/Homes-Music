@@ -10,6 +10,8 @@
 <body>
 <?php
 include_once("header.html");
+session_start();
+ob_start();
 ?>
 <?php
 include "PHP/databaseAccess.php";
@@ -47,8 +49,8 @@ $artist = mysqli_real_escape_string($conn, fread($metadata, 30));
 $album = mysqli_real_escape_string($conn, fread($metadata, 30));
 fclose($metadata);
 
-$command = "INSERT into song_collection(file_name, song_name, album, artist)
-  VALUES('". $safeFileName ."', '". $title ."', '". $album ."', '". $artist ."')";
+$command = "INSERT into song_collection(file_name, song_name, album, artist, username)
+  VALUES('". $safeFileName ."', '". $title ."', '". $album ."', '". $artist ."', '". $_SESSION['user'] ."')";
 $conn->query($command);     // Apply SQL query to the tn16jv database
 $conn->close();
 ?>

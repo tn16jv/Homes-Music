@@ -13,6 +13,10 @@
 
 <?php
 include_once("header.html");
+session_start();
+if (!isset($_SESSION['user'])) {
+    die ("<p>Not logged in</p>");
+}
 ?>
 
 <?php
@@ -21,7 +25,7 @@ $conn = connectDB();
 include "PHP/removeSong.php";
 include "PHP/playerModal.php";
 
-$sql = "SELECT * from song_collection";
+$sql = "SELECT * from song_collection WHERE username ='" . $_SESSION['user'] . "'";
 $result = $conn->query($sql);
 
 echo "<table id='myTable'><tr><th onclick='sortTable(0)'>File Name</th><th onclick='sortTable(1)'>Song Name</th>
