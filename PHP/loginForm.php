@@ -1,6 +1,79 @@
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
-<form method="POST"><button type="submit" name="logout" style="width:auto;">Logout</button></form>
+<?php
+include "PHP/databaseAccess.php";
+$conn = connectDB();
+
+function protect($string) {
+    $string = trim(strip_tags(addslashes($string)));
+    return $string;
+}
+
+if (isset($_POST['logout'])) {
+    session_unset();
+    echo "Logged out";
+}
+
+if (isset($_POST['loginSubmit'])) {
+    $username = protect($_POST['logUname']);
+    $password = protect($_POST['logPsw']);
+
+    $usernameQuery = "SELECT * FROM users WHERE username='" . $username . "'";
+    $checkUsername = mysqli_query($conn, $usernameQuery);
+    if (mysqli_num_rows($checkUsername) == 0) {
+        die("<p>Username not found</p>");
+    }
+
+    $passwordQuery = "SELECT * FROM users WHERE username ='" . $username . "' AND password='" . md5($password) . "'";
+    $checkPassword = mysqli_query($conn, $passwordQuery);
+    if (mysqli_num_rows($checkPassword) == 0) {
+        die("<p>Wrong password buddy</p>");
+    }
+
+    $row = mysqli_fetch_assoc($checkPassword);
+    $_SESSION['uid'] = $row['id'];
+    $_SESSION['user'] = $row['username'];
+}
+
+if (isset($_POST['registerSubmit'])) {
+    $username = protect($_POST['regUname']);
+    $password = protect($_POST['regPsw']);
+    $email = protect($_POST['regEmail']);
+
+    $usernameQuery = "SELECT * FROM users WHERE username='" . $username . "'";
+    $checkUsername = mysqli_query($conn,$usernameQuery);
+    $count = mysqli_num_rows($checkUsername);
+    if ($count == 1) {
+        die("<p>Username taken</p>");
+    }
+
+    $emailQuery = "SELECT * FROM users WHERE email='" . $email . "'";
+    $checkEmail = mysqli_query($conn, $emailQuery);
+    $count = mysqli_num_rows($checkEmail);
+    if ($count == 1) {
+        die ("<p>Email taken</p>");
+    }
+
+    $date = date('U');
+    $insertQuery = "INSERT INTO users (username, password, email)
+                    VALUES('".$username."', '".md5($password)."', '".$email."')";
+    $conn->query($insertQuery);
+}
+?>
+
+<?php
+if (isset($_SESSION['user'])) {
+    ?>
+    <form method="POST">
+        <button type="submit" name="logout" style="width:auto;">Logout</button>
+    </form>
+    <?php
+}
+else {
+    ?>
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+    <?php
+}
+    ?>
 
 <div id="id01" class="modal">
 
@@ -61,63 +134,3 @@
         </div>
     </form>
 </div>
-
-<?php
-include "PHP/databaseAccess.php";
-$conn = connectDB();
-
-function protect($string) {
-    $string = trim(strip_tags(addslashes($string)));
-    return $string;
-}
-
-if (isset($_POST['logout'])) {
-    session_unset();
-    echo "Logged out";
-}
-
-if (isset($_POST['loginSubmit'])) {
-    $username = protect($_POST['logUname']);
-    $password = protect($_POST['logPsw']);
-
-    $usernameQuery = "SELECT * FROM users WHERE username='" . $username . "'";
-    $checkUsername = mysqli_query($conn, $usernameQuery);
-    if (mysqli_num_rows($checkUsername) == 0) {
-        die("<p>Username not found</p>");
-    }
-
-    $passwordQuery = "SELECT * FROM users WHERE username ='" . $username . "' AND password='" . md5($password) . "'";
-    $checkPassword = mysqli_query($conn, $passwordQuery);
-    if (mysqli_num_rows($checkPassword) == 0) {
-        die("<p>Wrong password buddy</p>");
-    }
-
-    $row = mysqli_fetch_assoc($checkPassword);
-    $_SESSION['uid'] = $row['id'];
-    $_SESSION['user'] = $row['username'];
-}
-
-if (isset($_POST['registerSubmit'])) {
-    $username = protect($_POST['regUname']);
-    $password = protect($_POST['regPsw']);
-    $email = protect($_POST['regEmail']);
-
-    $usernameQuery = "SELECT * FROM users WHERE username='" . $username . "'";
-    $checkUsername = mysqli_query($conn,$usernameQuery);
-    $count = mysqli_num_rows($checkUsername);
-    if ($count == 1) {
-        die("<p>Username taken</p>");
-    }
-
-    $emailQuery = "SELECT * FROM users WHERE email='" . $email . "'";
-    $checkEmail = mysqli_query($conn, $emailQuery);
-    $count = mysqli_num_rows($checkEmail);
-    if ($count == 1) {
-        die ("<p>Email taken</p>");
-    }
-
-    $date = date('U');
-    $insertQuery = "INSERT INTO users (username, password, email)
-                    VALUES('".$username."', '".md5($password)."', '".$email."')";
-    $conn->query($insertQuery);
-}

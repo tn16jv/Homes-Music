@@ -9,10 +9,10 @@ CREATE TABLE users (
 ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE song_collection (
-	file_name VARCHAR(30) NOT NULL,
-	song_name VARCHAR(30),
-	album VARCHAR(30),
-	artist VARCHAR(30),
+	file_name VARCHAR(128) NOT NULL,
+	song_name VARCHAR(32),
+	album VARCHAR(32),
+	artist VARCHAR(32),
 	username VARCHAR(32),
 	public BOOLEAN
 );

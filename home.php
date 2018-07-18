@@ -36,7 +36,7 @@ include_once("PHP/loginForm.php");
 
 <?php
 if (isset($_SESSION['user'])) {
-    echo "Logged in as " . $_SESSION['user'];
+    echo "Logged in as: \"" . $_SESSION['user'] . "\"";
 }
 
 $nextMonth = 30 * 60 * 24 * 60 + time();    // Cookie lasts for a month from now
