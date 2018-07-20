@@ -6,6 +6,6 @@ if (isset($_POST['playSong'])) {
     $file2 = "src=%22music_collection%2F".$file."%22";
     $file3 = rawurldecode($file2);
     echo "<audio id=\"player\" controls><source ".$file3." type=audio/mp3></source></audio>";
-    echo rawurldecode($file);
+    echo "<p>".rawurldecode($file)."</p>";
 }
 ?>

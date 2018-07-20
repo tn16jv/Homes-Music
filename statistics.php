@@ -26,7 +26,7 @@ if ($result->num_rows > 0 && $count > 0) {      // Retrieve the first 10 rows of
 <th onclick='sortTable(2)'>Navigation Ease</th><th onclick='sortTable(3)'>Comments</th></tr>";
     while($row = $result->fetch_assoc()) {
         echo "<tr><td>". $row["dates"]. "</td><td>". $row["rating"]. "</td><td>". $row["nav_ease"]. "</td>
-            <td>". $row["comments"] ."</td><br>";
+            <td>". $row["comments"] ."</td>";
     }
     $count = $count - 1;
 }

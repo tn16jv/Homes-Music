@@ -8,8 +8,10 @@ function protect($string) {
 }
 
 if (isset($_POST['logout'])) {
+    $onlineUpdate = "UPDATE users SET online='0' WHERE id='" . $_SESSION['uid'] . "'";
+    mysqli_query($conn, $onlineUpdate);
     session_unset();
-    echo "Logged out";
+    echo "<p>Logged out</p>";
 }
 
 if (isset($_POST['loginSubmit'])) {
@@ -31,6 +33,10 @@ if (isset($_POST['loginSubmit'])) {
     $row = mysqli_fetch_assoc($checkPassword);
     $_SESSION['uid'] = $row['id'];
     $_SESSION['user'] = $row['username'];
+
+    $time = date('U')+50;
+    $onlineUpdate = "UPDATE users SET online='" . $time . "' WHERE id='" . $_SESSION['uid'] . "'";
+    mysqli_query($conn, $onlineUpdate);
 }
 
 if (isset($_POST['registerSubmit'])) {
@@ -119,8 +125,8 @@ else {
             <input type="password" placeholder="Enter Password" name="regPsw" required>
             <label for="psw"><b>Confirm Password</b></label>
             <input type="password" placeholder="Confirm Password" name="regConfirmPsw" required>
-            <label for="regEmail"><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="regEmail" required>
+            <label for="regEmail"><b>Email (Optional - For Recovery)</b></label>
+            <input type="email" placeholder="Enter Email" name="regEmail">
 
             <button type="submit" name="registerSubmit">Register</button>
             <label>
@@ -129,7 +135,7 @@ else {
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
     </form>

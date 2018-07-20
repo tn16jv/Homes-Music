@@ -30,8 +30,7 @@ $command = "INSERT into feedback (unix_time, dates, username, email, rating, nav
 VALUES('" . $unix_time . "','" . $date . "','" . $name . "','" . $email . "','" . $rating . "','" . $nav_ease . "','"
     . $comments . "')";
 
-$conn->query($command);     // Apply SQL query to the tn16jv database
-$conn->close();
+mysqli_query($conn, $command);
 ?>
 <footer>
     <p>Created by: ThaiBinh Nguyen</p>
