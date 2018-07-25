@@ -2,22 +2,24 @@
 include "PHP/databaseAccess.php";
 $conn = connectDB();
 
+function createDir($user) {
+    $path = "music_collection/" . $user;
+    $permission = 0755;
+
+    if (!file_exists($path)) {
+        mkdir($path, $permission, true);
+    } else {
+        die("<p>Failed to create storage space for user.</p>");
+    }
+}
+
 function protect($string) {
     $string = trim(strip_tags(addslashes($string)));
     return $string;
 }
 
-if (isset($_POST['logout'])) {
-    $onlineUpdate = "UPDATE users SET online='0' WHERE id='" . $_SESSION['uid'] . "'";
-    mysqli_query($conn, $onlineUpdate);
-    session_unset();
-    echo "<p>Logged out</p>";
-}
-
-if (isset($_POST['loginSubmit'])) {
-    $username = protect($_POST['logUname']);
-    $password = protect($_POST['logPsw']);
-
+function login($username, $password) {
+    global $conn;
     $usernameQuery = "SELECT * FROM users WHERE username='" . $username . "'";
     $checkUsername = mysqli_query($conn, $usernameQuery);
     if (mysqli_num_rows($checkUsername) == 0) {
@@ -39,6 +41,20 @@ if (isset($_POST['loginSubmit'])) {
     mysqli_query($conn, $onlineUpdate);
 }
 
+if (isset($_POST['logout'])) {
+    $onlineUpdate = "UPDATE users SET online='0' WHERE id='" . $_SESSION['uid'] . "'";
+    mysqli_query($conn, $onlineUpdate);
+    session_unset();
+    echo "<p>Logged out</p>";
+}
+
+if (isset($_POST['loginSubmit'])) {
+    $username = protect($_POST['logUname']);
+    $password = protect($_POST['logPsw']);
+
+    login($username, $password);
+}
+
 if (isset($_POST['registerSubmit'])) {
     $username = protect($_POST['regUname']);
     $password = protect($_POST['regPsw']);
@@ -51,17 +67,22 @@ if (isset($_POST['registerSubmit'])) {
         die("<p>Username taken</p>");
     }
 
-    $emailQuery = "SELECT * FROM users WHERE email='" . $email . "'";
-    $checkEmail = mysqli_query($conn, $emailQuery);
-    $count = mysqli_num_rows($checkEmail);
-    if ($count == 1) {
-        die ("<p>Email taken</p>");
+    if (!$email === "") {
+        $emailQuery = "SELECT * FROM users WHERE email='" . $email . "'";
+        $checkEmail = mysqli_query($conn, $emailQuery);
+        $count = mysqli_num_rows($checkEmail);
+        if ($count == 1) {
+            die ("<p>Email taken</p>");
+        }
     }
 
     $date = date('U');
     $insertQuery = "INSERT INTO users (username, password, email)
                     VALUES('".$username."', '".md5($password)."', '".$email."')";
     $conn->query($insertQuery);
+
+    createDir($username);
+    login($username, $password);
 }
 ?>
 
@@ -104,14 +125,14 @@ else {
 
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
+            <span class="psw">Forgot <a href="recovery.php">password?</a></span>
         </div>
     </form>
 </div>
 
 <div id="id02" class="modal">
 
-    <form class="modal-content animate" method="POST">
+    <form id="registerForm" class="modal-content animate" method="POST">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
             <!--<img src="images/favicon.png" alt="Avatar" class="avatar">-->
@@ -136,7 +157,7 @@ else {
 
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
+            <span class="psw">Forgot <a href="recovery.php">password?</a></span>
         </div>
     </form>
 </div>

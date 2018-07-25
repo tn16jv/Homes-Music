@@ -20,6 +20,11 @@ div.top_logo {
     width: 100%;
 }
 
+li {
+    float: left;
+}
+
+
 div.top_menu {
     background-color: slategrey;
     padding: 0px;
@@ -73,7 +78,7 @@ a.top_links:hover {
 }
 
 input, select {
-    padding:5px;
+    padding:12px 20px;
     border:2px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;

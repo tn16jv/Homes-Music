@@ -8,6 +8,8 @@
     <link href="css/home.css" type="text/css" rel="stylesheet" />
     <link href="css/loginForm.css" type="text/css" rel="stylesheet" />
     <link rel="icon" href="images/favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="Script/loginForm.js"></script>
 </head>
 <body>
 
@@ -32,7 +34,6 @@ ob_start(); //Fixes any issues with headers being sent and then stopping the HTT
 <?php
 include_once("PHP/loginForm.php");
 ?>
-<script src="Script/loginForm.js"></script>
 
 <?php
 if (isset($_SESSION['user'])) {
@@ -44,13 +45,13 @@ setcookie('lastVisit', date("g:ia")." on ".date("F d Y"), $nextMonth);
 if(isset($_COOKIE['lastVisit']))    // Checks the cookies list for lastVisit
 {
     $last = $_COOKIE['lastVisit'];
-    echo "<p>The last time your IP visited was ". $last;
+    echo "<p>The last time your IP visited was ". $last ."</p>";
 }
 else
-    echo "<p>Wow! This is the first time you visited!";
+    echo "<p>Wow! This is the first time you visited!</p>";
 
 if(count($_COOKIE) == 0)        // If cookies are disabled the cookies list will always be null
-    echo "You have your cookies disabled. Please enable them.</p>"
+    echo "<p>You have your cookies disabled. Please enable them.</p>"
 ?>
 <footer>
     <p>Created by: ThaiBinh Nguyen</p>

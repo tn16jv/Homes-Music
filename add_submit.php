@@ -28,7 +28,7 @@ function checkFileType()
 if(isset($_POST['upload_song']) && $_POST['upload_song']=="Upload Song")    // Check if form filled properly
 {
     checkFileType();
-    $dir = 'music_collection/';   // Folder for songs in Project directory
+    $dir = "music_collection/" . $_SESSION['user'] . "/";   // Folder for songs in Project directory
     $safeFile = str_replace(array("#"), array(""), $_FILES['audio']['name']);  // shebangs can't be parsed by html
     $savePath = $dir.basename($safeFile);    // Where the song will be saved to on the server
     if (move_uploaded_file($_FILES['audio']['tmp_name'], $savePath))
