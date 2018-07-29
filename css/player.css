@@ -1,10 +1,30 @@
 #playerArea {
-    margin: 0 auto;
+    margin: 16px auto 16px;
+    padding: 10px;
     width: calc(100% - 100px);
-    position:fixed; /* Puts the playerArea in one fixed spot */
+    /*position:fixed; /* Puts the playerArea in one fixed spot */
     top: 100px;
+    border: 4px outset limegreen;
+    border-radius: 16px;
 }
 
 #player {
     width: 100%;    /* audio player will take up 100% of the playerArea */
+}
+
+#searchArea {
+    margin: 0px 8px 16px;
+    width: 50ch;
+}
+
+#searchInput {
+    width: 100%;
+}
+
+button.privateButton {
+    background-color: limegreen;
+}
+
+button.removeButton {
+    background-color: darkred;
 }

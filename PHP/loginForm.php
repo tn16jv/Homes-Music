@@ -39,10 +39,13 @@ function login($username, $password) {
     $time = date('U')+50;
     $onlineUpdate = "UPDATE users SET online='" . $time . "' WHERE id='" . $_SESSION['uid'] . "'";
     mysqli_query($conn, $onlineUpdate);
+
+    $activeUpdate = "UPDATE users SET active=1 WHERE id='" . $_SESSION['uid'] . "'";
+    mysqli_query($conn, $activeUpdate);
 }
 
 if (isset($_POST['logout'])) {
-    $onlineUpdate = "UPDATE users SET online='0' WHERE id='" . $_SESSION['uid'] . "'";
+    $onlineUpdate = "UPDATE users SET active='0' WHERE id='" . $_SESSION['uid'] . "'";
     mysqli_query($conn, $onlineUpdate);
     session_unset();
     echo "<p>Logged out</p>";

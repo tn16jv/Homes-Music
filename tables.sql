@@ -13,6 +13,7 @@ CREATE TABLE song_collection (
 	song_name VARCHAR(32),
 	album VARCHAR(32),
 	artist VARCHAR(32),
-	username VARCHAR(32),
-	public BOOLEAN
+	username VARCHAR(32) NOT NULL,
+	public BOOLEAN,
+	PRIMARY KEY(file_name, username)
 );

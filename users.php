@@ -17,14 +17,18 @@ include "PHP/databaseAccess.php";
 $conn = connectDB();
 $time = date('U')+50;
 
-$usersQuery = "SELECT * FROM users where online > 0";
+$usersQuery = "SELECT * FROM users WHERE online > 0 ";
 $usersResult = mysqli_query($conn, $usersQuery);
-if (mysqli_num_rows($usersResult)==0) {
-    echo ("<p>No users online at the moment.</p>");
-} else {
-    while ($row = mysqli_fetch_assoc($usersResult)) {
+
+$counter = 0;
+while ($row = mysqli_fetch_assoc($usersResult)) {
+    if (($row['active'] > 0) && ($time - $row['online'] < 3600)) {  // If they didn't log out and it's less than an hour
+        $counter += 1;
         echo "<p>" . $row['username'] . "</p>";
     }
+}
+if ($counter == 0) {
+    echo ("<p>No users online at the moment.</p>");
 }
 ?>
 <footer>

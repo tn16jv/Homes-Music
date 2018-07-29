@@ -17,7 +17,7 @@ ob_start();
 include "PHP/databaseAccess.php";
 function checkFileType()
 {
-    $allowed = array('mp3');
+    $allowed = array('mp3', 'wav', 'wave', 'ogg');
     $filename = $_FILES['audio']['name'];
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
     if (!in_array($ext, $allowed)) {
@@ -48,6 +48,18 @@ $title = mysqli_real_escape_string($conn, fread($metadata,30));
 $artist = mysqli_real_escape_string($conn, fread($metadata, 30));
 $album = mysqli_real_escape_string($conn, fread($metadata, 30));
 fclose($metadata);
+
+if (!empty($_POST['songTitle'])) {
+    $title = $_POST['songTitle'];
+}
+
+if (!empty($_POST['artist'])) {
+    $artist = $_POST['artist'];
+}
+
+if (!empty($_POST['album'])) {
+    $album = $_POST['album'];
+}
 
 $command = "INSERT into song_collection(file_name, song_name, album, artist, username)
   VALUES('". $safeFileName ."', '". $title ."', '". $album ."', '". $artist ."', '". $_SESSION['user'] ."')";

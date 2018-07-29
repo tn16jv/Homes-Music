@@ -78,7 +78,8 @@ a.top_links:hover {
 }
 
 input, select {
-    padding:12px 20px;
+    font-size: large;
+    padding:8px 16px;
     border:2px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -109,6 +110,11 @@ th, td {
     padding: 0px 20px 0px 20px;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
+}
+
+.tableText {
+    word-wrap: break-word;   /* Want the characters of a word to wrap if needed. */
+    word-break: break-all;
 }
 
 footer {

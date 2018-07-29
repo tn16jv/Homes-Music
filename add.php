@@ -5,7 +5,23 @@
     <meta charset="UTF-8">
     <title>Add to Collection</title>
     <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/loader.css" type="text/css" rel="stylesheet" />
     <link rel="icon" href="images/favicon.png">
+    <script>
+        function loader() {
+            document.getElementById('loader').style.display='block';
+        }
+        function uploadSubmit() {
+            var audioFile = document.getElementsByName("audio")[0];
+
+            if (audioFile.files.length !== 0) {
+                loader();
+                audioFile.setCustomValidity('');
+            } else {
+                audioFile.setCustomValidity("A file must be selected in order to upload.");
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -18,11 +34,18 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 
+<p>Currently supported audio formats: .mp3 and .wav</p>
 <form action="add_submit.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="audio" value="Song from hard disk"/>
-    <input type="submit" name="upload_song" value="Upload Song"/>
-</form>
+    <input type="file" name="audio" value="Song from hard disk">
+    <input type="submit" name="upload_song" value="Upload Song" onclick="uploadSubmit()">
 
+    <p>(Optional) Additional Info:</p>
+    <div><input type="text" size="30" placeholder="Songname" name="songTitle"></div>
+    <div><input type="text" size="30" placeholder="Album" name="album"></div>
+    <div><input type="text" size="30" placeholder="Artist" name="artist"></div>
+</form>
+<div id="loader"></div>
+<button onclick="uploadSubmit()"></button>
 <footer>
     <p>Created by: ThaiBinh Nguyen</p>
     <p>Brock University</p>

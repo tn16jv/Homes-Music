@@ -22,12 +22,12 @@ ob_start(); //Fixes any issues with headers being sent and then stopping the HTT
 <div class="content_text">
     <p>Welcome to Home's Music!</p>
     <p>
-        This website is a place to upload your music collection to play whenever and wherever you need it. You can also
-        use this as an online backup to your music albums. However, media must be enabled in your browser (should be on
-        by default).
+        This website allows sharing and streaming of music. You can also upload your music collection as an online
+        backup, then stream it from anywhere. Checkout "Public" to see what songs users are sharing. You must create
+        your own account to upload your own music and get your own personal storage.
     </p>
     <p>
-        Note: uploading a second file with the same filename as a previous upload will just overwrite the previous file.
+        However, media must be enabled in your browser (should be on by default).
     </p>
 </div>
 

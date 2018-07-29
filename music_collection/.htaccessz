@@ -1,0 +1,9 @@
+<Files ~ "\.wav$">
+Order allow,deny
+Deny from all
+</Files>
+
+<Files ~ "\.mp3$">
+  Order allow,deny
+  Deny from all
+</Files>
