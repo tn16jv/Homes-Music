@@ -13,3 +13,6 @@ Web platform for streaming and sharing music with the world.
 
 ## Disclaimer
 Only share songs you own and are allowed to share. No illegal stuff allowed.
+
+&nbsp;
+<img src="https://github.com/tn16jv/Homes-Music/blob/master/images/sample.PNG" alt="Website Screenshot">
