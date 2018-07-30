@@ -36,28 +36,28 @@ $result = $conn->query($sql);
 
 echo "<div>Click on the table headers to sort by each category.</div>";
 
-echo "<table id='myTable'><tr><th onclick='sortTable(0)'>File Name</th><th onclick='sortTable(1)'>Song Name</th>
-<th onclick='sortTable(2)'>Album</th><th onclick='sortTable(3)'>Artist</th><th onclick='sortTable(4)'>Status</th><th></th></tr>";
+echo "<table id='myTable'><thead><tr><th onclick='sortTable(0)'>File Name</th><th onclick='sortTable(1)'>Song Name</th>
+<th onclick='sortTable(2)'>Album</th><th onclick='sortTable(3)'>Artist</th><th onclick='sortTable(4)'>Status</th><th></th></tr></thead>";
 
+echo "<tbody id='searchTable'>";
 while($row = mysqli_fetch_array($result))       // Iterates across all rows of the table, with $row as enumeration
 {
     $fileName = rawurlencode($row["file_name"]);
     // Only fileName needs to be urlencoded. Its usage in a link <a></a> may be broken in PHP by a '
-    echo "<tbody id='searchTable'>";
     echo "<tr><td><form method=\"POST\"><button type=\"submit\" value=$fileName name=\"playSong\">".$row["file_name"]."</button></form></td><td class='tableText'>"
         . $row["song_name"]. "</td><td class='tableText'>". $row["album"]. "</td><td class='tableText'>". $row["artist"]. "</td>";
 
     if ($row['public']) {
-        echo "<td><form method=\"POST\"><button class='privateButton' type=\"submit\" value=\"public\" name=\"makePrivate\">Public</button>
+        echo "<td><form method=\"POST\"><button title='Click to make private' class='privateButton' type=\"submit\" value=\"public\" name=\"makePrivate\">Public</button>
         <input name='fileName' type='hidden' value={$fileName}></form></td>";
     } else {
-        echo "<td><form method=\"POST\"><button type=\"submit\" value=\"private\" name=\"makePublic\">Private</button>
+        echo "<td><form method=\"POST\"><button title='Click to make public' type=\"submit\" value=\"private\" name=\"makePublic\">Private</button>
         <input name='fileName' type='hidden' value={$fileName}></form></td>";
     }
 
-    echo "<td><form method=\"POST\"><button class='removeButton' type=\"submit\" value=$fileName name=\"removeSong\">Remove</button></form></td></tr>";
-    echo "</tbody>";
+    echo "<td><form method=\"POST\"><button title='Click to remove' class='removeButton' type=\"submit\" value=$fileName name=\"removeSong\">Remove</button></form></td></tr>";
 }
+echo "</tbody>";
 ?>
 </body>
 </html>

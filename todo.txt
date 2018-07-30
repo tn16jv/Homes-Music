@@ -9,3 +9,6 @@ directly enter a back end URL to administer the site thus bypassing the authenti
 end pages should check and use one or more session variables that are set after the initial 
 authentication before allowing the script to continue. The session data should be removed after logout 
 or a short timeout has occurred.
+
+
+hashing directory stucture

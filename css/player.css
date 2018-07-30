@@ -1,11 +1,11 @@
 #playerArea {
     margin: 16px auto 16px;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     width: calc(100% - 100px);
     /*position:fixed; /* Puts the playerArea in one fixed spot */
     top: 100px;
-    border: 4px outset limegreen;
-    border-radius: 16px;
+    border: 4px outset slategray;
+    border-radius: 8px;
 }
 
 #player {
@@ -13,7 +13,7 @@
 }
 
 #searchArea {
-    margin: 0px 8px 16px;
+    margin: 0px 0px 16px;
     width: 50ch;
 }
 

@@ -3,7 +3,7 @@ body  {
     font-family: 'Arial', serif;
     color: #000000;
     margin: 5px;
-    padding-top: 100px;
+    padding: 110px 20px 0;
 }
 
 div.top_logo {
@@ -90,31 +90,42 @@ input, select {
 table {
     border: 1px solid black;
     margin-bottom: 40px;
+    border-collapse: collapse;
 }
 
-tr:hover {background-color: lightgray}
+#myTable tbody tr:hover {background-color: #e6ffe6;}
 
-button {
-    background-color: slategray;
-    border: none;
+#myTable tr:nth-child(even) {background-color: #f2f2f2;}
+
+#myTable.hidden {visibility:hidden;display:none;}
+
+#myTable td {
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+#myTable th {
+    border: 1px solid #ddd;
+    padding: 12px 6px;
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-th, td {
-    padding: 0px 20px 0px 20px;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
 }
 
 .tableText {
     word-wrap: break-word;   /* Want the characters of a word to wrap if needed. */
     word-break: break-all;
+}
+
+button {
+    background-color: darkslategray;
+    border: none;
+    color: #f8f8f8;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 footer {
