@@ -35,6 +35,8 @@ if(isset($_POST['upload_song']) && $_POST['upload_song']=="Upload Song")    // C
     {
         echo 'Song added to collection!';
     }
+} else {
+    die("<p>Something's gone wrong. Perhaps the server's size limit for uploads is too low, or storage has been exceeded.</p>");
 }
 
 $conn = connectDB();

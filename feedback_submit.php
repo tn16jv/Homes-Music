@@ -31,6 +31,7 @@ VALUES('" . $unix_time . "','" . $date . "','" . $name . "','" . $email . "','" 
     . $comments . "')";
 
 mysqli_query($conn, $command);
+die(mysqli_error($conn));
 ?>
 <footer>
     <p>Created by: ThaiBinh Nguyen</p>
