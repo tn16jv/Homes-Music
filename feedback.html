@@ -8,13 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function(){
-            $("#includedContent").load("header.html");
+            $("#includedHeader").load("header.html");
+            $("#includedFooter").load("footer.html");
         });
     </script>
 </head>
 <body>
 
-<div id="includedContent"></div>
+<div id="includedHeader"></div>
 
 <aside>
 <form action="feedback_submit.php" method="post">
@@ -44,10 +45,7 @@
     </p>
 </form>
 </aside>
-<footer>
-    <p>Created by: ThaiBinh Nguyen</p>
-    <p>Brock University</p>
-    <p>2018</p>
-</footer>
+
+<div id="includedFooter"></div>
 </body>
 </html>

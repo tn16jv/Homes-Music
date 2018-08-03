@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="Script/sortTable.js"></script>
     <script src="Script/filterTable.js"></script>
+    <script src="Script/ajaxRequestSong.js"></script>
 </head>
 <body>
 
@@ -21,10 +22,11 @@ include_once("header.html");
     <input id="searchInput" type="text" placeholder="Search Songs by Name, Album, Artist...">
 </div>
 
+<div id="anArea"></div>
+
 <?php
 include "PHP/databaseAccess.php";
 $conn = connectDB();
-include "PHP/playerModal.php";
 
 $sql = "SELECT * from song_collection WHERE public =TRUE";
 $result = $conn->query($sql);
@@ -38,14 +40,17 @@ echo "<tbody id='searchTable'>";
 while($row = mysqli_fetch_array($result))       // Iterates across all rows of the table, with $row as enumeration
 {
     $fileName = rawurlencode($row["file_name"]);
+    $user = $row['username'];
     // Only fileName needs to be urlencoded. Its usage in a link <a></a> may be broken in PHP by a '
-    echo "<tr><td><form method=\"POST\"><input name='user' type='hidden' value={$row["username"]}>
-        <button type=\"submit\" value=$fileName name=\"playSongPublic\">". $row["file_name"] ."</button></form></td><td class='tableText'>"
-        . $row["song_name"]. "</td><td class='tableText'>". $row["album"]. "</td><td class='tableText'>". $row["artist"]. "</td>";
+    echo "<tr><td><button onclick='postSong(\"$user\", \"$fileName\")'>". $row["file_name"] ."</button></td>
+<td class='tableText'>" . $row["song_name"]. "</td><td class='tableText'>". $row["album"]. "</td><td class='tableText'>". $row["artist"]. "</td>";
 
     echo "<td>". $row['username'] ."</td>";
 }
-echo "</tbody>";
+echo "</tbody></table>";
+?>
+<?php
+include_once("footer.html");
 ?>
 </body>
 </html>

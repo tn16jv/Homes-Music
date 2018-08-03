@@ -27,7 +27,7 @@ ob_start(); //Fixes any issues with headers being sent and then stopping the HTT
         your own account to upload your own music and get your own personal storage.
     </p>
     <p>
-        However, media must be enabled in your browser (should be on by default).
+        However, Javascript should be enabled for functionality (should be on by default).
     </p>
 </div>
 
@@ -45,7 +45,7 @@ setcookie('lastVisit', date("g:ia")." on ".date("F d Y"), $nextMonth);
 if(isset($_COOKIE['lastVisit']))    // Checks the cookies list for lastVisit
 {
     $last = $_COOKIE['lastVisit'];
-    echo "<p>The last time your IP visited was ". $last ."</p>";
+    echo "<p>The last time your browser visited was ". $last ."</p>";
 }
 else
     echo "<p>Wow! This is the first time you visited!</p>";
@@ -53,10 +53,9 @@ else
 if(count($_COOKIE) == 0)        // If cookies are disabled the cookies list will always be null
     echo "<p>You have your cookies disabled. Please enable them.</p>"
 ?>
-<footer>
-    <p>Created by: ThaiBinh Nguyen</p>
-    <p>Brock University</p>
-    <p>2018</p>
-</footer>
+
+<?php
+include_once("footer.html");
+?>
 </body>
 </html>

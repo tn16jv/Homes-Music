@@ -42,10 +42,9 @@ if(isset($_POST['recoverySubmit'])) {
     <?php
 }
 ?>
-<footer>
-    <p>Created by: ThaiBinh Nguyen</p>
-    <p>Brock University</p>
-    <p>2018</p>
-</footer>
+
+<?php
+include_once("footer.html");
+?>
 </body>
 </html>

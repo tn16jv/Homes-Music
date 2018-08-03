@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 
-<p>Currently supported audio formats: .mp3 and .wav</p>
+<p>Currently supported audio formats: .mp3 .wav .ogg</p>
 <form action="add_submit.php" method="post" enctype="multipart/form-data">
     <input type="file" name="audio" value="Song from hard disk">
     <input type="submit" name="upload_song" value="Upload Song" onclick="uploadSubmit()">
@@ -46,10 +46,9 @@ if (!isset($_SESSION['user'])) {
 </form>
 <div id="loader"></div>
 <button onclick="uploadSubmit()"></button>
-<footer>
-    <p>Created by: ThaiBinh Nguyen</p>
-    <p>Brock University</p>
-    <p>2018</p>
-</footer>
+
+<?php
+include_once("footer.html");
+?>
 </body>
 </html>

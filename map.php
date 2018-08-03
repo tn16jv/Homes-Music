@@ -6,6 +6,14 @@
     <title>Map</title>
     <link href="css/main.css" type="text/css" rel="stylesheet" />
     <link rel="icon" href="images/favicon.png">
+    <style>
+        #map {
+            position: relative;
+            width: 99vw;
+            left: calc(-50vw + 50.5%);
+            height: 800px;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +21,7 @@
 include_once("header.html");
 ?>
 
-<div id="map" style="width:100%;height:800px;"></div>
+<div id="map"></div>
 <script>
     function myMap() {
         var mapCanvas = document.getElementById("map");
@@ -27,10 +35,9 @@ include_once("header.html");
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQF2Tk7lEZWPqjP-yC4UNrule8mRO8Svs&callback=myMap"></script>
-<footer>
-    <p>Created by: ThaiBinh Nguyen</p>
-    <p>Brock University</p>
-    <p>2018</p>
-</footer>
+
+<?php
+include_once("footer.html");
+?>
 </body>
 </html>

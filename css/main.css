@@ -128,10 +128,17 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 footer {
     background: slategray;
     color: white;
     text-align:center;
     font-size: large;
     margin-top: 800px;
+    position: relative;     /* These 3 lines allows a child element to be wider than its parent element */
+    width: 99vw;           /* Uses the viewport unit */
+    left: calc(-50vw + 50.5%);  /* Need to offset by 49.5% due to the width only being 99% of the viewport units */
 }

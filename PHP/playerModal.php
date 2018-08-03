@@ -1,9 +1,12 @@
+#!/usr/bin/php-cgi
+<!DOCTYPE html>
+<html lang="en">
+<body>
 <?php
 if (isset($_POST['playSong'])) {
     error_reporting(E_ERROR);   // makes only error be reported
-    $keys = array_keys($_POST);     // links for the associative array of $_POST
-    $file= $_POST[$keys[0]];
-    $file2 = "src=%22music_collection%2F". $_SESSION['user'] . "%2F" . $file ."%22";
+    $file= $_POST['playSong'];
+    $file2 = "src=%22music_collection%2F". $_POST['userName'] . "%2F" . $file ."%22";
     $file3 = rawurldecode($file2);
 
     echo "<div id='playerArea'>";
@@ -27,3 +30,5 @@ if (isset($_POST['playSongPublic'])) {
     echo "</div>";
 }
 ?>
+</body>
+</html>

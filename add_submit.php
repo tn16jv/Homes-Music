@@ -68,10 +68,9 @@ $command = "INSERT into song_collection(file_name, song_name, album, artist, use
 $conn->query($command);     // Apply SQL query to the tn16jv database
 $conn->close();
 ?>
-<footer>
-    <p>Created by: ThaiBinh Nguyen</p>
-    <p>Brock University</p>
-    <p>2018</p>
-</footer>
+
+<?php
+include_once("footer.html");
+?>
 </body>
 </html>

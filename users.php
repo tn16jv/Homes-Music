@@ -31,10 +31,9 @@ if ($counter == 0) {
     echo ("<p>No users online at the moment.</p>");
 }
 ?>
-<footer>
-    <p>Created by: ThaiBinh Nguyen</p>
-    <p>Brock University</p>
-    <p>2018</p>
-</footer>
+
+<?php
+include_once("footer.html");
+?>
 </body>
 </html>

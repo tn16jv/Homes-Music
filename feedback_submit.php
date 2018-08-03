@@ -33,10 +33,9 @@ VALUES('" . $unix_time . "','" . $date . "','" . $name . "','" . $email . "','" 
 mysqli_query($conn, $command);
 die(mysqli_error($conn));
 ?>
-<footer>
-    <p>Created by: ThaiBinh Nguyen</p>
-    <p>Brock University</p>
-    <p>2018</p>
-</footer>
+
+<?php
+include_once("footer.html");
+?>
 </body>
 </html>
