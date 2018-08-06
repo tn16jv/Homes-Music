@@ -19,7 +19,7 @@ include_once("header.html");
 ?>
 
 <div id="searchArea">
-    <input id="searchInput" type="text" placeholder="Search Songs by Name, Album, Artist...">
+    <input id="searchInput" type="search" placeholder="Search Songs by Name, Album, Artist...">
 </div>
 
 <div id="anArea"></div>

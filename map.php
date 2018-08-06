@@ -11,7 +11,7 @@
             position: relative;
             width: 99vw;
             left: calc(-50vw + 50.5%);
-            height: 800px;
+            height: calc(99vh - 110px); /* Makes height 99% of the viewport, subtracting the padding from the top menu */
         }
     </style>
 </head>

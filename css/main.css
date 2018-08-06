@@ -87,6 +87,10 @@ input, select {
     background-color: lightgray;
 }
 
+input:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 table {
     border: 1px solid black;
     margin-bottom: 40px;

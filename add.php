@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Add to Collection</title>
     <link href="css/main.css" type="text/css" rel="stylesheet" />
-    <link href="css/loader.css" type="text/css" rel="stylesheet" />
+    <link href="css/loader2.css" type="text/css" rel="stylesheet" />
     <link rel="icon" href="images/favicon.png">
     <script>
         function loader() {
@@ -45,7 +45,6 @@ if (!isset($_SESSION['user'])) {
     <div><input type="text" size="30" placeholder="Artist" name="artist"></div>
 </form>
 <div id="loader"></div>
-<button onclick="uploadSubmit()"></button>
 
 <?php
 include_once("footer.html");
