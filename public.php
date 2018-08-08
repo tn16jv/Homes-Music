@@ -11,6 +11,7 @@
     <script src="Script/sortTable.js"></script>
     <script src="Script/filterTable.js"></script>
     <script src="Script/ajaxRequestSong.js"></script>
+    <script src="Script/shuffleLoopPlay.js"></script>
 </head>
 <body>
 
@@ -21,6 +22,10 @@ include_once("header.html");
 <div id="searchArea">
     <input id="searchInput" type="search" placeholder="Search Songs by Name, Album, Artist...">
 </div>
+<button id="shuffleButton">Shuffle</button>
+<button id="loopButton">Loop</button>
+<button id="lastTrack"> < </button>
+<button id="nextTrack"> > </button>
 
 <div id="anArea"></div>
 
@@ -42,7 +47,7 @@ while($row = mysqli_fetch_array($result))       // Iterates across all rows of t
     $fileName = rawurlencode($row["file_name"]);
     $user = $row['username'];
     // Only fileName needs to be urlencoded. Its usage in a link <a></a> may be broken in PHP by a '
-    echo "<tr><td><button onclick='postSong(\"$user\", \"$fileName\")'>". $row["file_name"] ."</button></td>
+    echo "<tr><td><button name='playSong' value='$fileName' onclick='postSong(\"$user\", \"$fileName\")'>". $row["file_name"] ."</button></td>
 <td class='tableText'>" . $row["song_name"]. "</td><td class='tableText'>". $row["album"]. "</td><td class='tableText'>". $row["artist"]. "</td>";
 
     echo "<td>". $row['username'] ."</td>";
