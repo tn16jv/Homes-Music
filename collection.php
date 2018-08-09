@@ -26,12 +26,13 @@ if (!isset($_SESSION['user'])) {
 <div id="searchArea">
     <input id="searchInput" type="search" placeholder="Search Songs by Name, Album, Artist...">
 </div>
-<button id="shuffleButton">Shuffle</button>
-<button id="loopButton">Loop</button>
-<button id="lastTrack"> < </button>
-<button id="nextTrack"> > </button>
-
 <div id="anArea"></div>
+<div id="playerButtons">
+    <button id="loopButton">Loop</button>
+    <button id="shuffleButton">Shuffle</button>
+    <button id="lastTrack"> < </button>
+    <button id="nextTrack"> > </button>
+</div>
 
 <?php
 include "PHP/databaseAccess.php";

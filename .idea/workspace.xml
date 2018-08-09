@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef1acc9a-6b04-4264-871d-554d8beec16b" name="Default" comment="Minor fixes and added clear to search bar">
-      <change afterPath="$PROJECT_DIR$/Script/shuffleLoopPlay.js" afterDir="false" />
+    <list default="true" id="ef1acc9a-6b04-4264-871d-554d8beec16b" name="Default" comment="Added shuffle and loop playing. Also added playerModalStream which is a streaming version of the audio player.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHP/playerModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/playerModal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/ajaxRequestSong.js" beforeDir="false" afterPath="$PROJECT_DIR$/Script/ajaxRequestSong.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP/playerModalStream.php" beforeDir="false" afterPath="$PROJECT_DIR$/PHP/playerModalStream.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/shuffleLoopPlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/Script/shuffleLoopPlay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/player.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/player.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public.php" beforeDir="false" afterPath="$PROJECT_DIR$/public.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,61 +33,61 @@
     <session id="-763535791">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="161" />
+          <entry key="project.closed" value="173" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.5" value="38" />
-          <entry key="project.open.time.6" value="91" />
-          <entry key="project.open.time.7" value="23" />
-          <entry key="project.open.time.8" value="5" />
-          <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="161" />
+          <entry key="project.open.time.6" value="98" />
+          <entry key="project.open.time.7" value="25" />
+          <entry key="project.open.time.8" value="7" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="173" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="23" />
+          <entry key="css" value="24" />
           <entry key="htaccess" value="2" />
-          <entry key="html" value="11" />
+          <entry key="html" value="12" />
           <entry key="ini" value="6" />
           <entry key="js" value="18" />
           <entry key="md" value="3" />
-          <entry key="php" value="40" />
+          <entry key="php" value="42" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="23" />
-          <entry key="HTML" value="11" />
+          <entry key="CSS" value="24" />
+          <entry key="HTML" value="12" />
           <entry key="Ini" value="6" />
           <entry key="JavaScript" value="18" />
           <entry key="Markdown" value="3" />
-          <entry key="PHP" value="40" />
+          <entry key="PHP" value="42" />
           <entry key="SQL" value="1" />
           <entry key="htaccess" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2085" />
+          <entry key="css" value="2156" />
           <entry key="dummy" value="4" />
           <entry key="html" value="204" />
           <entry key="ini" value="46" />
-          <entry key="js" value="607" />
+          <entry key="js" value="869" />
           <entry key="md" value="606" />
-          <entry key="php" value="9569" />
-          <entry key="txt" value="244" />
+          <entry key="php" value="9765" />
+          <entry key="txt" value="389" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2085" />
+          <entry key="CSS" value="2156" />
           <entry key="HTML" value="209" />
           <entry key="Ini" value="46" />
-          <entry key="JavaScript" value="607" />
+          <entry key="JavaScript" value="869" />
           <entry key="Markdown" value="606" />
-          <entry key="PHP" value="9563" />
-          <entry key="PLAIN_TEXT" value="248" />
+          <entry key="PHP" value="9759" />
+          <entry key="PLAIN_TEXT" value="393" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
@@ -95,11 +95,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/player.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/collection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+            <state relative-caret-position="476">
+              <caret line="28" selection-start-line="28" selection-end-line="33" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -107,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
+            <state relative-caret-position="493">
+              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -116,44 +125,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Script/shuffleLoopPlay.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="442">
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Script/loginForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Script/ajaxRequestSong.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHP/playerModalStream.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/song.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -168,6 +150,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PHP/playerModalStream.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/song.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PHP/loginForm.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -177,10 +177,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/statistics.php">
+        <entry file="file://$PROJECT_DIR$/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="71" column="2" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
+            <state relative-caret-position="697">
+              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -233,7 +233,6 @@
         <option value="$PROJECT_DIR$/css/collection.css" />
         <option value="$PROJECT_DIR$/music_collection/.htaccess" />
         <option value="$PROJECT_DIR$/PHP/loginForm.php" />
-        <option value="$PROJECT_DIR$/css/player.css" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/project.ini" />
         <option value="$PROJECT_DIR$/PHP/databaseAccess.php" />
@@ -252,13 +251,15 @@
         <option value="$PROJECT_DIR$/add.php" />
         <option value="$PROJECT_DIR$/Script/filterTable.js" />
         <option value="$PROJECT_DIR$/playerModal.php" />
-        <option value="$PROJECT_DIR$/song.php" />
         <option value="$PROJECT_DIR$/PHP/playerModal.php" />
-        <option value="$PROJECT_DIR$/collection.php" />
         <option value="$PROJECT_DIR$/Script/shuffleLoopPlay2.js" />
-        <option value="$PROJECT_DIR$/Script/shuffleLoopPlay.js" />
-        <option value="$PROJECT_DIR$/public.php" />
         <option value="$PROJECT_DIR$/Script/ajaxRequestSong.js" />
+        <option value="$PROJECT_DIR$/PHP/playerModalStream.php" />
+        <option value="$PROJECT_DIR$/song.php" />
+        <option value="$PROJECT_DIR$/Script/shuffleLoopPlay.js" />
+        <option value="$PROJECT_DIR$/collection.php" />
+        <option value="$PROJECT_DIR$/public.php" />
+        <option value="$PROJECT_DIR$/css/player.css" />
       </list>
     </option>
   </component>
@@ -280,6 +281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,7 +318,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -727,6 +728,18 @@
       <workItem from="1533764201428" duration="185000" />
       <workItem from="1533764437833" duration="137000" />
       <workItem from="1533764769305" duration="79000" />
+      <workItem from="1533765228433" duration="205000" />
+      <workItem from="1533775275619" duration="216000" />
+      <workItem from="1533775531935" duration="192000" />
+      <workItem from="1533775884714" duration="119000" />
+      <workItem from="1533782277166" duration="196000" />
+      <workItem from="1533784499906" duration="325000" />
+      <workItem from="1533784846777" duration="202000" />
+      <workItem from="1533785082835" duration="254000" />
+      <workItem from="1533785362154" duration="26000" />
+      <workItem from="1533785653480" duration="199000" />
+      <workItem from="1533785968155" duration="94000" />
+      <workItem from="1533786096979" duration="76000" />
     </task>
     <task id="LOCAL-00001" summary="Added registration">
       <created>1531652267318</created>
@@ -798,17 +811,24 @@
       <option name="project" value="LOCAL" />
       <updated>1533569891947</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added shuffle and loop playing. Also added playerModalStream which is a streaming version of the audio player.">
+      <created>1533765429316</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533765429316</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219160000" />
+    <option name="totallyTimeSpent" value="221264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11886994" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13059701" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -832,6 +852,31 @@
       <window_info anchor="right" id="Remote Host" order="3" weight="0.1684435" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12100213" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32624868" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32943678" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.329718" />
+      <window_info anchor="bottom" id="File Transfer" order="13" visible="true" weight="0.31127983" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32897604" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.1684435" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -850,7 +895,8 @@
     <MESSAGE value="Fixed upload error and feedback" />
     <MESSAGE value="Added ajax calls to the song requests. Added more stats and made footer/map the full width." />
     <MESSAGE value="Minor fixes and added clear to search bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes and added clear to search bar" />
+    <MESSAGE value="Added shuffle and loop playing. Also added playerModalStream which is a streaming version of the audio player." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added shuffle and loop playing. Also added playerModalStream which is a streaming version of the audio player." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93c76b62-9c8d-4263-9e18-d49821808f3b/console.sql">
@@ -1001,13 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/player.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1050,18 +1089,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Script/shuffleLoopPlay2.js" />
-    <entry file="file://$PROJECT_DIR$/public.php">
+    <entry file="file://$PROJECT_DIR$/statistics.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
+        <state relative-caret-position="840">
+          <caret line="71" column="2" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -1072,17 +1104,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHP/playerModalStream.php">
+    <entry file="file://$PROJECT_DIR$/css/player.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        <state relative-caret-position="408">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/song.php">
+    <entry file="file://$PROJECT_DIR$/collection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="33" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/shuffleLoopPlay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/ajaxRequestSong.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1093,6 +1146,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PHP/playerModalStream.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/song.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PHP/loginForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1100,31 +1167,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/statistics.php">
+    <entry file="file://$PROJECT_DIR$/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="2" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Script/shuffleLoopPlay.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Script/ajaxRequestSong.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        <state relative-caret-position="697">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="67" />
         </state>
       </provider>
     </entry>

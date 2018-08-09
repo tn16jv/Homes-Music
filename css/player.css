@@ -21,6 +21,14 @@
     width: 100%;
 }
 
+#playerButtons {
+    margin-bottom: 16px;
+}
+
+button.active {
+    background-color: limegreen;
+}
+
 button.privateButton {
     background-color: limegreen;
 }

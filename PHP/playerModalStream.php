@@ -6,8 +6,6 @@
 if (isset($_POST['playSong'])) {
     error_reporting(E_ERROR);   // makes only error be reported
     $file= $_POST['playSong'];
-    header("Content-Type: audio/mpeg");
-    $song = file_get_contents("PHP/6. Down.mp3");//your song directory
 
     echo "<div id='playerArea'>";
     echo "<p>".rawurldecode($file)."</p>";

@@ -1,7 +1,10 @@
 var links;
-var currentIndex = 0;
+var currentIndex;
 
 $(document).ready(function() {
+    $("#loopButton").addClass('active');
+    loopInitialize();
+
     $("#shuffleButton").on("click", function () {
         shuffle();
     });
@@ -18,6 +21,10 @@ $(document).ready(function() {
         next();
     });
 });
+
+function play() {
+    links.get(currentIndex).click();
+}
 
 function fisherYates(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -38,30 +45,35 @@ function fisherYates(array) {
     return array;
 }
 
-function shuffle() {
-    $("#shuffleButton").css("background-color", "limegreen");
-    $("#loopButton").css("background-color", "darkslategray");
+function shuffleInitialize() {
     links = $("button[name='playSong']");
-    //var randIndex = Math.floor(Math.random() * links.length);
-    //links.get(randIndex).click();
     links = fisherYates(links);
     currentIndex = 0;
+}
+
+function shuffle() {
+    $("#shuffleButton").addClass("active");
+    $("#loopButton").removeClass("active");
+    //var randIndex = Math.floor(Math.random() * links.length);
+    //links.get(randIndex).click();
+    shuffleInitialize();
     play();
 }
 
-function loop() {
-    $("#shuffleButton").css("background-color", "darkslategray");
-    $("#loopButton").css("background-color", "limegreen");
+function loopInitialize() {
     links = $("button[name='playSong']");
     currentIndex = 0;
+}
+
+
+function loop() {
+    $("#shuffleButton").removeClass("active");
+    $("#loopButton").addClass("active");
+    loopInitialize()
     play();
 }
 
 const mod = (x, n) => (x % n + n) % n
-
-function play() {
-    links.get(currentIndex).click();
-}
 
 function last() {
     currentIndex = mod(currentIndex-1, links.length);
