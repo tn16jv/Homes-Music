@@ -46,7 +46,7 @@ function fisherYates(array) {
 }
 
 function shuffleInitialize() {
-    links = $("button[name='playSong']");
+    links = $("button[name='playSong']:visible");
     links = fisherYates(links);
     currentIndex = 0;
 }
@@ -61,7 +61,7 @@ function shuffle() {
 }
 
 function loopInitialize() {
-    links = $("button[name='playSong']");
+    links = $("button[name='playSong']:visible");
     currentIndex = 0;
 }
 

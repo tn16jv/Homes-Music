@@ -27,6 +27,21 @@ function verifyAccess($userName, $songName) {
     }
 }
 
+function getContentType($fileName) {
+    $ext = pathinfo($fileName, PATHINFO_EXTENSION);
+    switch ($ext) {
+        case "mp3":
+            return "Content-Type: audio/mpeg";
+            break;
+        case "wav":
+            return "Content-Type: audio/wav";
+            break;
+        case "ogg":
+            return "Content-Type: application/ogg";
+            break;
+    }
+}
+
 if (isset($_GET['fileName'])) {
     verifyAccess($_GET['user'], rawurldecode($_GET['fileName']));
 
@@ -34,9 +49,13 @@ if (isset($_GET['fileName'])) {
     $absolutePath = rawurldecode($filePath);
 
     //header("Content-Type: audio/mpeg, audio/x-wav, application/ogg");
-    header("Content-Type: audio/mpeg");
+    header(getContentType($_GET['fileName']));
     header('Content-length: ' . filesize($absolutePath));
-    $song = file_get_contents($absolutePath);//your song directory
+    header('Content-Disposition: filename="' . $_GET['fileName']);  // don't need to urldecode, it's automatic
+    header('Cache-Control: no-cache');
+    header('Accept-Ranges: bytes');
+    header("Content-Transfer-Encoding: chunked");
+    $song = readfile($absolutePath);//your song directory
 
     echo "<audio id=\"player\" controls autoplay><source src='" . $song . "'></audio>";
 

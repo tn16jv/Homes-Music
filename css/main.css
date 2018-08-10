@@ -120,6 +120,10 @@ table {
     word-break: break-all;
 }
 
+iframe {
+    width: 100%;
+}
+
 button {
     background-color: darkslategray;
     border: none;

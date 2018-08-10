@@ -37,7 +37,7 @@ $conn = connectDB();
 $sql = "SELECT * from song_collection WHERE public =TRUE";
 $result = $conn->query($sql);
 
-echo "<div>Click on the table headers to sort by each category.</div>";
+echo "<p>Click on the table headers to sort by each category. Reclick Loop/Shuffle to play the altered table playlists.</p>";
 
 echo "<table id='myTable'><thead><tr><th onclick='sortTable(0)'>File Name</th><th onclick='sortTable(1)'>Song Name</th>
 <th onclick='sortTable(2)'>Album</th><th onclick='sortTable(3)'>Artist</th><th onclick='sortTable(4)'>User</th></tr></thead>";
