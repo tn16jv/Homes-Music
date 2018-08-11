@@ -1,6 +1,6 @@
 function postSong(user, song) {
     $.ajax({
-        url: "PHP/playerModal.php",
+        url: "PHP/playerModalStream.php",
         data:'playSong='+song+'&userName='+user,
         type: "POST",
         success:function(data){
