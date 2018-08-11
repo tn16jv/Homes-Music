@@ -57,8 +57,6 @@ if (isset($_GET['fileName'])) {
     header("Content-Transfer-Encoding: chunked");
     $song = readfile($absolutePath);//your song directory
 
-    echo "<audio id=\"player\" controls autoplay><source src='" . $song . "'></audio>";
-
     ob_clean();
     flush();
 }
