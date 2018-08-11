@@ -21,13 +21,14 @@ include_once("header.html");
 
 <div id="searchArea">
     <input id="searchInput" type="search" placeholder="Search Songs by Name, Album, Artist...">
+    <button id="searchClear">Clear</button>
 </div>
 <div id="anArea"></div>
 <div id="playerButtons">
     <button id="loopButton">Loop</button>
     <button id="shuffleButton">Shuffle</button>
-    <button id="lastTrack"> < </button>
-    <button id="nextTrack"> > </button>
+    <button id="lastTrack">&laquo;</button>
+    <button id="nextTrack">&raquo;</button>
 </div>
 
 <?php

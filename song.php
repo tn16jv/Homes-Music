@@ -34,7 +34,7 @@ function getContentType($fileName) {
             return "Content-Type: audio/mpeg";
             break;
         case "wav":
-            return "Content-Type: audio/wav";
+            return "Content-Type: audio/x-wav, audio/wav";
             break;
         case "ogg":
             return "Content-Type: application/ogg";
@@ -48,7 +48,6 @@ if (isset($_GET['fileName'])) {
     $filePath = "music_collection/" . $_GET['user'] . "/" . $_GET['fileName'];
     $absolutePath = rawurldecode($filePath);
 
-    //header("Content-Type: audio/mpeg, audio/x-wav, application/ogg");
     header(getContentType($_GET['fileName']));
     header('Content-length: ' . filesize($absolutePath));
     header('Content-Disposition: filename="' . $_GET['fileName']);  // don't need to urldecode, it's automatic

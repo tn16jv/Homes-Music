@@ -16,11 +16,10 @@
 
 #searchArea {
     margin: 0px 0px 16px;
-    width: 50ch;
 }
 
 #searchInput {
-    width: 100%;
+    width: 50ch;
 }
 
 #playerButtons {
