@@ -97,20 +97,18 @@ table {
     border-collapse: collapse;
 }
 
-#myTable tbody tr:hover {background-color: #e6ffe6;}
+tbody tr:hover {background-color: #e6ffe6;}
 
-#myTable tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {background-color: #f2f2f2;}
 
-#myTable.hidden {visibility:hidden;display:none;}
-
-#myTable td {
+td {
     border: 1px solid #ddd;
-    padding: 4px;
+    padding: 4px 8px;
 }
 
-#myTable th {
+th {
     border: 1px solid #ddd;
-    padding: 12px 6px;
+    padding: 12px 8px;
     background-color: #4CAF50;
     color: white;
 }
@@ -119,6 +117,8 @@ table {
     word-wrap: break-word;   /* Want the characters of a word to wrap if needed. */
     word-break: break-all;
 }
+
+#myTable.hidden {visibility:hidden;display:none;}
 
 iframe {
     width: 100%;
