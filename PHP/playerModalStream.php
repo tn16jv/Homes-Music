@@ -27,8 +27,7 @@ if (isset($_POST['playSong'])) {
 
         $(contents).find(source).css("width", "99%");
 
-        var height = $(contents).find(source).height();    // Want the frame only as tall as the source
-        $("#theFrame").css("height", String(height));
+        $("#theFrame").css("height", "100px");
     }
 </script>
 </body>
