@@ -17,3 +17,13 @@ CREATE TABLE song_collection (
 	public BOOLEAN,
 	PRIMARY KEY(file_name, username)
 );
+
+CREATE TABLE feedback (
+	unix_time INT(11) NOT NULL,
+	dates TEXT NOT NULL,
+	username TEXT,
+	email TEXT,
+	rating INT(11) NOT NULL,
+	nav_ease TEXT NOT NULL,
+	comments TEXT
+);

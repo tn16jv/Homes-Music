@@ -4,16 +4,16 @@
     </div>
     <div class="top_menu">
         <nav>
-        <a class="top_home" href="home.php" title="Home">
-            <img src="images/home.png" alt="icon" width="32" height="32"/>
-        </a>
-        <a class="top_links" href="public.php" title="Public">Public</a>
-        <a class="top_links" href="collection.php" title="Collection">My Songs</a>
-        <a class="top_links" href="add.php" title="Add/Remove">Add</a>
-        <a class="top_links" href="users.php" title="Users">Users</a>
-        <a class="top_links" href="statistics.php" title="Statistics">Statistics</a>
-        <a class="top_links" href="feedback.html" title="Feedback">Feedback</a>
-        <a class="top_links" href="map.php" title="Map">Map</a>
+            <a class="top_home" href="home.php" title="Home">
+                <img src="images/home.png" alt="icon" width="32" height="32"/>
+            </a>
+            <a class="top_links" href="public.php" title="Public">Public</a>
+            <a class="top_links" href="collection.php" title="Collection">My Songs</a>
+            <a class="top_links" href="add.php" title="Add/Remove">Add</a>
+            <a class="top_links" href="users.php" title="Users">Users</a>
+            <a class="top_links" href="statistics.php" title="Statistics">Statistics</a>
+            <a class="top_links" href="feedback.html" title="Feedback">Feedback</a>
+            <a class="top_links" href="map.php" title="Map">Map</a>
         </nav>
     </div>
 </header>
@@ -31,15 +31,12 @@
         url = url.substr(url.lastIndexOf("/") + 1);
 
         if (url != "home.php") {    // Want the home/index page to not be marked
-            //$('.top_menu li').each(function(){
             $('.top_menu a').each(function () {
-                //var href = $(this).find('a').attr('href');
                 var href = $(this).attr('href');
 
                 if (url == href) {
                     // Add active class
                     $(this).addClass('active');
-                    $(this).css("background-color", "darkslategray");
                 }
             });
         }

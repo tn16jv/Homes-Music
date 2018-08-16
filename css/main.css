@@ -65,6 +65,10 @@ a.top_links:hover {
     padding: 9px 20px 9px 20px;
 }
 
+a.active {
+    background-color: darkslategray;
+}
+
 #comments {
     width: 400px;
     height: 200px;
