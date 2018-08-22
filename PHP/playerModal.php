@@ -10,8 +10,8 @@ if (isset($_POST['playSong'])) {
     $file3 = rawurldecode($file2);
 
     echo "<div id='playerArea'>";
-    echo "<audio id=\"player\" controls autoplay><source ".$file3." type=audio/mp3></source></audio>";
     echo "<p>".rawurldecode($file)."</p>";
+    echo "<audio id=\"player\" controls autoplay><source ".$file3." type=audio/mp3></source></audio>";
     echo "</div>";
 }
 

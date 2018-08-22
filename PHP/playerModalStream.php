@@ -25,7 +25,7 @@ if (isset($_POST['playSong'])) {
             next();
         });
 
-        $(contents).find(source).css("width", "99%");
+        $(contents).find(source).css("width", "100%");
 
         $("#theFrame").css("height", "100px");
     }

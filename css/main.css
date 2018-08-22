@@ -3,7 +3,9 @@ body  {
     font-family: 'Arial', serif;
     color: #000000;
     margin: 5px;
-    padding: 110px 20px 0;
+    padding: 0 20px 0;
+    top: 110px;
+    position: relative;     /* Need this to enforce the top property */
 }
 
 div.top_logo {
