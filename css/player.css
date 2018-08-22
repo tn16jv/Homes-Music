@@ -1,3 +1,8 @@
+#anArea {
+    top: 100px;
+    position: sticky;
+}
+
 #playerArea {
     margin: 16px auto 16px;
     padding: 10px 10px 0 10px;
