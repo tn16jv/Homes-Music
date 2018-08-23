@@ -20,6 +20,15 @@ $(document).ready(function() {
     $("#nextTrack").on("click", function () {
         next();
     });
+
+    $("#hidePlayer").on("click", function() {
+        hidden();
+    });
+
+    $("#showPlayer").hide();
+    $("#showPlayer").on("click", function() {
+        showing();
+    })
 });
 
 function play() {
@@ -83,4 +92,14 @@ function last() {
 function next() {
     currentIndex = mod(currentIndex+1, links.length);
     play();
+}
+
+function hidden() {
+    $("#playerArea").hide();
+    $("#showPlayer").show();
+}
+
+function showing() {
+    $("#playerArea").show();
+    $("#showPlayer").hide();
 }

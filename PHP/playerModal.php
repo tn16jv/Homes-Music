@@ -9,10 +9,8 @@ if (isset($_POST['playSong'])) {
     $file2 = "src=%22music_collection%2F". $_POST['userName'] . "%2F" . $file ."%22";
     $file3 = rawurldecode($file2);
 
-    echo "<div id='playerArea'>";
     echo "<p>".rawurldecode($file)."</p>";
     echo "<audio id=\"player\" controls autoplay><source ".$file3." type=audio/mp3></source></audio>";
-    echo "</div>";
 }
 
 if (isset($_POST['playSongPublic'])) {
