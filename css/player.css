@@ -5,7 +5,7 @@
     min-width: 200px;
     border: 1px solid darkgreen;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: auto;
     resize: both;
     background-color: #f1f1f1;
     top: 70px;      /* Can set to 'inherit' to take the parent's (body) top */
