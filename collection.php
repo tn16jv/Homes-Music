@@ -27,7 +27,9 @@ if (!isset($_SESSION['user'])) {
     <input id="searchInput" type="search" placeholder="Search Songs by Name, Album, Artist...">
     <button id="searchClear">Clear</button>
 </div>
-<button id="showPlayer">Reopen Player</button>
+<div id="reopenArea">
+    <button id="showPlayer">Reopen Player</button>
+</div>
 <div id="playerArea">
     <div id="anArea"></div>
     <div id="playerButtons">

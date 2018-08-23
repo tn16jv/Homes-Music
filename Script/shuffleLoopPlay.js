@@ -25,7 +25,7 @@ $(document).ready(function() {
         hidden();
     });
 
-    $("#showPlayer").hide();
+    $("#reopenArea").hide();
     $("#showPlayer").on("click", function() {
         showing();
     })
@@ -96,10 +96,10 @@ function next() {
 
 function hidden() {
     $("#playerArea").hide();
-    $("#showPlayer").show();
+    $("#reopenArea").show();
 }
 
 function showing() {
     $("#playerArea").show();
-    $("#showPlayer").hide();
+    $("#reopenArea").hide();
 }

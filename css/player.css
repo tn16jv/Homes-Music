@@ -16,6 +16,22 @@
     width: 100%;    /* audio player will take up 100% of the playerArea */
 }
 
+#reopenArea {
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid darkgreen;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    width: 200px;
+    top: 70px;
+    position: sticky;
+}
+
+#showPlayer {
+    margin: auto;
+    display: block; /* need this to center*/
+}
+
 #searchArea {
     margin: 0px 0px 16px;
 }
