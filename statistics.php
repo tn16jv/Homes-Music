@@ -7,6 +7,7 @@
     <link href="css/main.css" type="text/css" rel="stylesheet" />
     <link rel="icon" href="images/favicon.png">
     <script src="Script/sortTable.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 

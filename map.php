@@ -14,6 +14,7 @@
             height: calc(99vh - 110px); /* Makes height 99% of the viewport, subtracting the padding from the top menu */
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 

@@ -49,10 +49,15 @@ if(isset($_COOKIE['lastVisit']))    // Checks the cookies list for lastVisit
 }
 else
     echo "<p>Wow! This is the first time you visited!</p>";
-
-if(count($_COOKIE) == 0)        // If cookies are disabled the cookies list will always be null
-    echo "<p>You have your cookies disabled. Please enable them.</p>"
 ?>
+
+<script>
+    if (!navigator.cookieEnabled) {     // Creates a message if cookies are disabled
+        var message = document.createElement("p");
+        message.innerHTML = "Your browser's cookies are disabled. Please enable them."
+        document.getElementsByTagName("body")[0].appendChild(message);  // Will append before elements below like footer
+    }
+</script>
 
 <?php
 include_once("footer.html");
